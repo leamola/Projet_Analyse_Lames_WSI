@@ -1,16 +1,26 @@
-# Dossier de sortie
-output/
+# Ignorer WinPython complet (binaires, IDE, notebooks, etc.)
+tools/python/WPy64-*/python-3.*/Scripts/
+tools/python/WPy64-*/python-3.*/DLLs/
+tools/python/WPy64-*/python-3.*/tcl/
+tools/python/WPy64-*/python-3.*/Lib/site-packages/
+tools/python/WPy64-*/n/
 
-# Fichiers Word temporaires
-~$*
+# Ignorer notebooks temporaires
+*.ipynb_checkpoints
 
-# Caches Python
+# Ignorer dossiers de build/compilés
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Python portable / packages lourds
-tools/python/WPy64-*/python-*/Lib/site-packages/
+# Ignorer logs
+*.log
 
-# IDE / configuration
-.vscode/
-.idea/
+# Ignorer fichiers de config locaux
+*.env
+*.DS_Store
+~$*.docx
+
+# Ignorer dossiers de sortie ou de résultats
+output/
