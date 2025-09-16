@@ -1,0 +1,16 @@
+# Dossier de sortie
+output/
+
+# Fichiers Word temporaires
+~$*
+
+# Caches Python
+__pycache__/
+*.pyc
+
+# Python portable / packages lourds
+tools/python/WPy64-*/python-*/Lib/site-packages/
+
+# IDE / configuration
+.vscode/
+.idea/
