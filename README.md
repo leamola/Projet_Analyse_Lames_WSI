@@ -13,7 +13,7 @@ Compatible avec tout antigène IHC (CD7, CD3, etc.).
 🗂 Préparation des lames
 
 Regrouper les lames d’un patient dans un ZIP :      <PatientID>_<Antigene>.zip
-Le ZIP doit contenir uniquement des fichiers NDPI ou TIFF.
+Le ZIP doit contenir uniquement des fichiers NDPI, SVS ou TIFF.
 L’utilisateur n’a besoin que du ZIP pour lancer l’analyse.
 
 🛠 Prérequis
@@ -30,12 +30,13 @@ Placer le dossier Python portable dans le dépôt GitHub :
 
 PathologyToolbox/
 ├─ python\WinPython64-3.x.x\
-├─ setup.bat
+├─ lancer_toolbox.bat
 ├─ lancer_python.bat
 ├─ cell_detection.py
 ├─ annotation_global.py
 ├─ result.py
 ├─ preprocessing.py
+├─ MainGui.py
 └─ Guide_Utilisateur_Pathology_Toolbox.pdf
 Important : le dossier python doit être au même niveau que setup.bat et lancer_python.bat.
 
@@ -47,7 +48,7 @@ Aucune action manuelle n’est requise.
 
 🚀 Lancer l’application
 
-Double-cliquer sur lancer_python.bat.
+Double-cliquer sur lancer_toolbox.bat.
 Sélectionner le ZIP contenant les lames.
 L’outil analysera automatiquement les lames et générera :
 Images annotées des cellules détectées
