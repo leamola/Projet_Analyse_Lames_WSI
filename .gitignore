@@ -1,10 +1,3 @@
-# Ignorer WinPython complet (binaires, IDE, notebooks, etc.)
-tools/python/WPy64-*/python-3.*/Scripts/
-tools/python/WPy64-*/python-3.*/DLLs/
-tools/python/WPy64-*/python-3.*/tcl/
-tools/python/WPy64-*/python-3.*/Lib/site-packages/
-tools/python/WPy64-*/n/
-
 # Ignorer notebooks temporaires
 *.ipynb_checkpoints
 
@@ -24,3 +17,12 @@ __pycache__/
 
 # Ignorer dossiers de sortie ou de résultats
 output/
+
+# Ignorer tout le dossier tools/python
+tools/python/
+ss
+# (optionnel) ignorer tout le dossier tools
+# tools/
+
+# Ne PAS ignorer le script d’installation
+!tools/install_python.bat
