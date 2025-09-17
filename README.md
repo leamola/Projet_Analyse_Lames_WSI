@@ -1,75 +1,62 @@
-PathologyToolbox – Installation et utilisation
+PathologyToolbox – Analyse portable de lames IHC
+PathologyToolbox est un outil portable pour analyser des lames histologiques scannées (WSI), compatible avec tout antigène IHC. Il est conçu pour être utilisé sur des postes standards Windows, sans GPU ni droits administrateurs.
 
-Introduction
-PathologyToolbox est un outil portable pour l’analyse de lames histologiques scannées (WSI), utilisable pour n’importe quel antigène IHC.
-
-L’outil permet de :
---> Compter automatiquement les cellules positives et négatives pour un antigène donné.
---> Calculer le pourcentage d’expression ou de perte via déconvolution DAB.
---> Produire des images annotées et indicateurs synthétiques pour faciliter la relecture clinique.
-
-Il fonctionne sur des postes standards, sans GPU ni droits administrateurs, et repose sur des logiciels open source (Python portable).
-⚠️ Limitation actuelle : l’outil n’est pas optimisé pour les fichiers DICOM (.dcm). Il est prévu pour être amélioré sur ce point dans les versions futures.
-
-Préparation des lames
-  Les lames doivent être fournies en format NDPI,TIFF ou SVS.
-  Chaque patient doit avoir ses lames regroupées dans un fichier ZIP nommé comme suit :
-
-<PatientID>_<Antigene>.zip
-
-Après cette préparation, l’utilisateur n’a besoin que du ZIP pour lancer l’analyse.
-
-Prérequis
-
-Windows 10 ou 11
-setup.bat fourni avec l’outil
-Dossier Python portable WinPython placé dans :
-
-tools\python\WPy64-3*
-
-Structure des fichiers
-PathologyToolbox/
-├─ setup.bat
-├─ python/                  <- WinPython portable
-├─ annotation_global.py
-├─ cell_detection.py
-├─ Guide_Utilisateur_Pathology_Toolbox.pdf
-└─ ...
-
-Installation
-
-Double-cliquer sur setup.bat.
-
-Vérifie la présence de Python portable
-
-Met à jour pip
-
-Installe les dépendances : pyvips, numpy, opencv-python
-
-Fin de l’installation :
-
-Installation terminée. Python portable et packages sont prêts.
-
-Vérification
-python -c "import pyvips; import numpy; import cv2; print('pyvips, numpy et opencv-python installés avec succès')"
-
-Utilisation
-
-Lancer l’analyse sur le ZIP contenant les lames :
-
-python cell_detection.py --input <PatientID_Antigene.zip>
-
-
-Fonctionnalités :
+🎯 Fonctionnalités
 
 Détection et comptage automatique des cellules positives et négatives.
 Calcul du pourcentage d’expression ou de perte via déconvolution DAB.
 Export d’images annotées et de résultats synthétiques.
+
 Compatible avec tout antigène IHC (CD7, CD3, etc.).
-✅ Simple : l’utilisateur fournit juste le ZIP préparé.
+⚠️ Limitation : les fichiers DICOM (.dcm) ne sont pas optimisés pour l’instant. L’outil fonctionne pour NDPI, SVS et TIFF.
 
-Support
+🗂 Préparation des lames
 
-Consulter le guide utilisateur fourni :
-Guide_Utilisateur_Pathology_Toolbox.pdf
-Pour toute question ou retour, le dépôt GitHub est disponible pour suivi et contributions.
+Regrouper les lames d’un patient dans un ZIP :      <PatientID>_<Antigene>.zip
+Le ZIP doit contenir uniquement des fichiers NDPI ou TIFF.
+L’utilisateur n’a besoin que du ZIP pour lancer l’analyse.
+
+🛠 Prérequis
+
+Windows 10 ou 11
+Python portable 64-bit (WinPython)
+ – version 3.x recommandée
+Python doit être téléchargé et placé dans le dossier du dépôt comme indiqué ci-dessous.
+
+⚙️ Installation
+
+Télécharger Python portable depuis WinPython.
+Placer le dossier Python portable dans le dépôt GitHub :
+
+PathologyToolbox/
+├─ python\WinPython64-3.x.x\
+├─ setup.bat
+├─ lancer_python.bat
+├─ cell_detection.py
+├─ annotation_global.py
+├─ result.py
+├─ preprocessing.py
+└─ Guide_Utilisateur_Pathology_Toolbox.pdf
+Important : le dossier python doit être au même niveau que setup.bat et lancer_python.bat.
+
+Installer les dépendances automatiquement :
+
+Double-cliquer sur setup.bat.
+Le script vérifie Python et installe automatiquement les packages nécessaires (pyvips, numpy, opencv-python).
+Aucune action manuelle n’est requise.
+
+🚀 Lancer l’application
+
+Double-cliquer sur lancer_python.bat.
+Sélectionner le ZIP contenant les lames.
+L’outil analysera automatiquement les lames et générera :
+Images annotées des cellules détectées
+Pourcentage d’expression ou de perte de l’antigène
+Fichiers synthétiques pour faciliter la relecture
+
+✅ Simple et autonome : aucun paramétrage supplémentaire n’est nécessaire.
+
+📖 Support
+
+Lire le guide utilisateur fourni : Guide_Utilisateur_Pathology_Toolbox.pdf
+Pour questions ou contributions, utiliser le dépôt GitHub.
